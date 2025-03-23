@@ -2,13 +2,13 @@ import os
 from typing import Any, Dict, Optional, Union, TYPE_CHECKING
 
 import torch
-from lightning_fabric.plugins.environments import (
+from lightning.fabric.plugins.environments import (
     TorchElasticEnvironment,
     XLAEnvironment,
 )
-from lightning_fabric.utilities.types import _PATH, ReduceOp
-from lightning_fabric.utilities import move_data_to_device
-from pytorch_lightning.strategies import XLAStrategy
+from lightning.fabric.utilities.types import _PATH, ReduceOp
+from lightning.fabric.utilities import move_data_to_device
+from lightning.pytorch.strategies import XLAStrategy
 from torch import Tensor
 
 from neuronx_distributed.parallel_layers.parallel_state import (
@@ -27,7 +27,7 @@ import torch_xla.core.xla_model as xm
 from torch_xla.distributed.parallel_loader import MpDeviceLoader
 
 if TYPE_CHECKING:
-    from pytorch_lightning.strategies.strategy import TBroadcast
+    from lightning.pytorch.strategies.strategy import TBroadcast
 
 
 class NeuronXLAStrategy(XLAStrategy):
