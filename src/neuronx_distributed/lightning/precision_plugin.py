@@ -1,14 +1,14 @@
 from typing import Any, Callable, TYPE_CHECKING
 
-from lightning_fabric.accelerators.xla import _XLA_AVAILABLE
-from lightning_fabric.utilities.types import Optimizable
-from pytorch_lightning.plugins.precision import XLAPrecisionPlugin
+from lightning.fabric.accelerators.xla import _XLA_AVAILABLE
+from lightning.fabric.utilities.types import Optimizable
+from lightning.pytorch.plugins.precision import XLAPrecision
 
 if TYPE_CHECKING:
-    import pytorch_lightning as pl
+    import lightning.pytorch as pl
 
 
-class NeuronXLAPrecisionPlugin(XLAPrecisionPlugin):
+class NeuronXLAPrecisionPlugin(XLAPrecision):
     def __init__(self, mixed_precision_enabled: bool = False) -> None:
         if not _XLA_AVAILABLE:
             raise ModuleNotFoundError(str(_XLA_AVAILABLE))

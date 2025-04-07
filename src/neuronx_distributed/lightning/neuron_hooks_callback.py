@@ -1,4 +1,4 @@
-from pytorch_lightning.callbacks import Callback
+from lightning.pytorch.callbacks import Callback
 import torch_xla.core.xla_model as xm
 from neuronx_distributed.parallel_layers import parallel_state
 import os

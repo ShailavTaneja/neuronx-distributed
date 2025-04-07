@@ -5,13 +5,13 @@ import torch
 import torch_xla.core.xla_model as xm
 from lightning_utilities.core.apply_func import apply_to_collection
 from lightning_utilities.core.rank_zero import rank_zero_warn
-from pytorch_lightning import LightningModule
-from pytorch_lightning.trainer.connectors.logger_connector.fx_validator import (
+from lightning.pytorch import LightningModule
+from lightning.pytorch.trainer.connectors.logger_connector.fx_validator import (
     _FxValidator,
 )
-from pytorch_lightning.utilities.exceptions import MisconfigurationException
-from pytorch_lightning.utilities.signature_utils import is_param_in_hook_signature
-from pytorch_lightning.utilities.types import _METRIC
+from lightning.pytorch.utilities.exceptions import MisconfigurationException
+from lightning.pytorch.utilities.signature_utils import is_param_in_hook_signature
+from lightning.pytorch.utilities.types import _METRIC
 from torch import Tensor
 from torchmetrics import Metric
 
